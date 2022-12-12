@@ -671,6 +671,7 @@
                     setAutoplayYoutube: true,
                     classes: {
                         popup: "popup",
+                        popupWrapper: "popup__wrapper",
                         popupContent: "popup__content",
                         popupActive: "popup_show",
                         bodyActive: "popup-show"
