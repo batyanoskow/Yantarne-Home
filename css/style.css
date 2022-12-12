@@ -1343,6 +1343,14 @@ body::after {
   }
 }
 
+.friends__images picture {
+  width: 30%;
+}
+
+.friends__images picture img {
+  width: 100%;
+}
+
 .friends__images img {
   width: 30%;
 }
