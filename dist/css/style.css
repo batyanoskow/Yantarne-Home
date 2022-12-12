@@ -1102,13 +1102,6 @@ body::after {
   transition: all 0.5s ease 0s;
 }
 
-.about__button:hover {
-  color: #fff;
-  background: rgb(222, 19, 149);
-  background: -o-radial-gradient(circle, rgb(222, 19, 149) 0%, rgb(255, 0, 0) 93%);
-  background: radial-gradient(circle, rgb(222, 19, 149) 0%, rgb(255, 0, 0) 93%);
-}
-
 .team {
   padding: 5.3125rem 0;
 }
