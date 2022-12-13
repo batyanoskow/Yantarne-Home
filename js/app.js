@@ -4676,26 +4676,28 @@
                 var HEIGHT = canvas.height;
                 var barWidth = WIDTH / bufferLength;
                 var barHeight;
-                console.log(dataArray);
+                let IsRendering = false;
                 function renderFrame() {
-                    var x = 0;
-                    analyser.getByteFrequencyData(dataArray);
-                    ctx.clearRect(0, 0, WIDTH, HEIGHT);
-                    for (var i = 0; i < bufferLength; i++) {
-                        barHeight = dataArray[i] / 10;
-                        ctx.fillStyle = "white";
-                        ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
-                        x += barWidth + 3;
-                        if (75 === i) {
-                            ctx.fillStyle = "rgba(0,0,0,0)";
-                            ctx.fillRect(x, HEIGHT - barHeight, 10 * barWidth, barHeight);
-                            ctx.font = "20px Montserrat";
+                    if (true === IsRendering) {
+                        var x = 0;
+                        analyser.getByteFrequencyData(dataArray);
+                        ctx.clearRect(0, 0, WIDTH, HEIGHT);
+                        for (var i = 0; i < bufferLength; i++) {
+                            barHeight = dataArray[i] / 10;
                             ctx.fillStyle = "white";
-                            ctx.fillText("88.9", 425, 28);
-                            x += barWidth + 80;
+                            ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+                            x += barWidth + 3;
+                            if (75 === i) {
+                                ctx.fillStyle = "rgba(0,0,0,0)";
+                                ctx.fillRect(x, HEIGHT - barHeight, 10 * barWidth, barHeight);
+                                ctx.font = "20px Montserrat";
+                                ctx.fillStyle = "white";
+                                ctx.fillText("88.9", 425, 28);
+                                x += barWidth + 80;
+                            }
                         }
-                    }
-                    requestAnimationFrame(renderFrame);
+                        requestAnimationFrame(renderFrame);
+                    } else ctx.clearRect(0, 0, WIDTH, HEIGHT);
                 }
                 buttonPlay.addEventListener("click", (function(e) {
                     buttonPlay.classList.toggle("_active");
@@ -4703,10 +4705,12 @@
                     if (buttonPlay.classList.contains("_active")) {
                         context.resume();
                         audio.play();
+                        IsRendering = true;
                         renderFrame();
                         buttonPlayImg.setAttribute("srcset", "img/icon-pause.webp");
                     } else {
                         audio.pause();
+                        IsRendering = false;
                         buttonPlayImg.setAttribute("srcset", "img/icon-play.webp");
                     }
                 }));
