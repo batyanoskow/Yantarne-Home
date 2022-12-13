@@ -4660,7 +4660,6 @@
                 let audio = new Audio("https://complex.in.ua/yantarne");
                 audio.crossOrigin = "anonymous";
                 audio.volume = 1;
-                audio.load();
                 let buttonPlay = document.querySelector(".music-header__button");
                 let context = new AudioContext;
                 var src = context.createMediaElementSource(audio);
@@ -4679,7 +4678,6 @@
                 var barHeight;
                 console.log(dataArray);
                 function renderFrame() {
-                    requestAnimationFrame(renderFrame);
                     var x = 0;
                     analyser.getByteFrequencyData(dataArray);
                     ctx.clearRect(0, 0, WIDTH, HEIGHT);
@@ -4697,6 +4695,7 @@
                             x += barWidth + 80;
                         }
                     }
+                    requestAnimationFrame(renderFrame);
                 }
                 buttonPlay.addEventListener("click", (function(e) {
                     buttonPlay.classList.toggle("_active");
