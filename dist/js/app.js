@@ -4661,7 +4661,7 @@
                 audio.crossOrigin = "anonymous";
                 audio.volume = 1;
                 let buttonPlay = document.querySelector(".music-header__button");
-                let context = new (window.AudioContext || window.webkitAudioContext);
+                let context = new AudioContext;
                 var src = context.createMediaElementSource(audio);
                 var analyser = context.createAnalyser();
                 let canvas = document.getElementById("myCanvas");
