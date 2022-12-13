@@ -4647,7 +4647,7 @@
         };
         const da = new DynamicAdapt("max");
         da.init();
-        window.addEventListener("load", (function(event) {
+        window.onload = function(event) {
             function getData() {
                 setInterval((async function() {
                     await fetch("https://complex.in.ua/status-json.xsl?mount=/yantarne").then((res => res.json())).then((data => {
@@ -4660,6 +4660,7 @@
                 let audio = new Audio("https://complex.in.ua/yantarne");
                 audio.crossOrigin = "anonymous";
                 audio.volume = 1;
+                audio.load();
                 let buttonPlay = document.querySelector(".music-header__button");
                 let context = new AudioContext;
                 var src = context.createMediaElementSource(audio);
@@ -4675,11 +4676,12 @@
                 var WIDTH = canvas.width;
                 var HEIGHT = canvas.height;
                 var barWidth = WIDTH / bufferLength;
-                var barHeight = HEIGHT;
+                var barHeight;
                 console.log(dataArray);
                 function renderFrame() {
-                    analyser.getByteFrequencyData(dataArray);
+                    requestAnimationFrame(renderFrame);
                     var x = 0;
+                    analyser.getByteFrequencyData(dataArray);
                     ctx.clearRect(0, 0, WIDTH, HEIGHT);
                     for (var i = 0; i < bufferLength; i++) {
                         barHeight = dataArray[i] / 10;
@@ -4695,15 +4697,14 @@
                             x += barWidth + 80;
                         }
                     }
-                    requestAnimationFrame(renderFrame);
                 }
-                renderFrame();
                 buttonPlay.addEventListener("click", (function(e) {
                     buttonPlay.classList.toggle("_active");
                     let buttonPlayImg = document.querySelector(".music-header__button picture  source");
                     if (buttonPlay.classList.contains("_active")) {
                         context.resume();
                         audio.play();
+                        renderFrame();
                         buttonPlayImg.setAttribute("srcset", "img/icon-pause.webp");
                     } else {
                         audio.pause();
@@ -4713,7 +4714,7 @@
             }
             vizualizer();
             getData();
-        }));
+        };
         window["FLS"] = true;
         isWebp();
         menuInit();
