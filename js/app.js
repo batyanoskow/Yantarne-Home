@@ -922,7 +922,7 @@
                     easing: "easeOutQuad"
                 };
                 document.documentElement.classList.contains("menu-open") ? menuClose() : null;
-                if ("undefined" !== typeof SmoothScroll) (new SmoothScroll).animateScroll(targetBlockElement, "", options); else {
+                if ("undefined" !== typeof SmoothScroll) (new SmoothScroll).animateScroll(targetBlockElement, "", options); else setTimeout((function() {
                     let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
                     targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
                     targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
@@ -930,7 +930,7 @@
                         top: targetBlockElementPosition,
                         behavior: "smooth"
                     });
-                }
+                }), 700);
                 functions_FLS(`[gotoBlock]: Юхуу...едем к ${targetBlock}`);
             } else functions_FLS(`[gotoBlock]: Ой ой..Такого блока нет на странице: ${targetBlock}`);
         };
@@ -4657,60 +4657,18 @@
                 }), 4e3);
             }
             function vizualizer() {
+                let audio = new Audio("https://complex.in.ua/yantarne");
+                audio.crossOrigin = "anonymous";
+                audio.volume = 1;
                 let buttonPlay = document.querySelector(".music-header__button");
-                let context = new AudioContext;
-                var src = context.createMediaElementSource(audio);
-                var analyser = context.createAnalyser();
-                let canvas = document.getElementById("myCanvas");
-                var ctx = canvas.getContext("2d");
-                src.connect(analyser);
-                analyser.connect(context.destination);
-                analyser.fftSize = 512;
-                ctx.lineWidth = 5;
-                var bufferLength = analyser.frequencyBinCount;
-                var dataArray = new Uint8Array(bufferLength);
-                var WIDTH = canvas.width;
-                var HEIGHT = canvas.height;
-                var barWidth = WIDTH / bufferLength;
-                var barHeight;
-                let IsRendering = false;
-                function renderFrame() {
-                    if (true === IsRendering) {
-                        var x = 0;
-                        analyser.getByteFrequencyData(dataArray);
-                        ctx.clearRect(0, 0, WIDTH, HEIGHT);
-                        for (var i = 0; i < bufferLength; i++) {
-                            barHeight = dataArray[i] / 10;
-                            ctx.fillStyle = "white";
-                            ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
-                            x += barWidth + 3;
-                            if (75 === i) {
-                                ctx.fillStyle = "rgba(0,0,0,0)";
-                                ctx.fillRect(x, HEIGHT - barHeight, 10 * barWidth, barHeight);
-                                ctx.font = "20px Montserrat";
-                                ctx.fillStyle = "white";
-                                ctx.fillText("88.9", 425, 28);
-                                x += barWidth + 80;
-                            }
-                        }
-                        requestAnimationFrame(renderFrame);
-                    } else ctx.clearRect(0, 0, WIDTH, HEIGHT);
-                }
                 buttonPlay.addEventListener("click", (function(e) {
                     buttonPlay.classList.toggle("_active");
                     let buttonPlayImg = document.querySelector(".music-header__button picture  source");
                     if (buttonPlay.classList.contains("_active")) {
-                        let audio = new Audio("https://complex.in.ua/yantarne");
-                        audio.crossOrigin = "anonymous";
-                        audio.volume = 1;
-                        context.resume();
                         audio.play();
-                        IsRendering = true;
-                        renderFrame();
                         buttonPlayImg.setAttribute("srcset", "img/icon-pause.webp");
                     } else {
                         audio.pause();
-                        IsRendering = false;
                         buttonPlayImg.setAttribute("srcset", "img/icon-play.webp");
                     }
                 }));
