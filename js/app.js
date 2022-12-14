@@ -4685,6 +4685,7 @@
                 var barWidth = WIDTH / bufferLength;
                 var barHeight;
                 let IsRendering = false;
+                console.log("...");
                 function renderFrame() {
                     if (true === IsRendering) {
                         var x = 0;
