@@ -922,7 +922,7 @@
                     easing: "easeOutQuad"
                 };
                 document.documentElement.classList.contains("menu-open") ? menuClose() : null;
-                if ("undefined" !== typeof SmoothScroll) (new SmoothScroll).animateScroll(targetBlockElement, "", options); else setTimeout((function() {
+                if ("undefined" !== typeof SmoothScroll) (new SmoothScroll).animateScroll(targetBlockElement, "", options); else if (window.innerWidth < 991.99) setTimeout((function() {
                     let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
                     targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
                     targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
@@ -930,7 +930,15 @@
                         top: targetBlockElementPosition,
                         behavior: "smooth"
                     });
-                }), 700);
+                }), 700); else {
+                    let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
+                    targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
+                    targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
+                    window.scrollTo({
+                        top: targetBlockElementPosition,
+                        behavior: "smooth"
+                    });
+                }
                 functions_FLS(`[gotoBlock]: Юхуу...едем к ${targetBlock}`);
             } else functions_FLS(`[gotoBlock]: Ой ой..Такого блока нет на странице: ${targetBlock}`);
         };
