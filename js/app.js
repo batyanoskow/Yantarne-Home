@@ -4661,68 +4661,63 @@
                     songNameField.innerText = data.icestats.source.title;
                 }));
             }
-            function vizualizer() {
-                let audio = new Audio("https://complex.in.ua/yantarne");
-                audio.crossOrigin = "anonymous";
-                audio.volume = 1;
-                let buttonPlay = document.querySelector(".music-header__button");
-                let context = new (window.AudioContext || window.webkitAudioContext);
-                let analyser = context.createAnalyser();
-                let canvas = document.getElementById("myCanvas");
-                let ctx = canvas.getContext("2d");
-                analyser.fftSize = 512;
-                let bufferLength = analyser.frequencyBinCount;
-                let dataArray = new Uint8Array(bufferLength);
-                let WIDTH = canvas.width;
-                let HEIGHT = canvas.height;
-                let barWidth = WIDTH / bufferLength;
-                let barHeight = HEIGHT;
-                let isRendering = false;
-                function renderFrame() {
-                    if (true === isRendering) {
-                        analyser.getByteFrequencyData(dataArray);
-                        let x = 0;
-                        ctx.clearRect(0, 0, WIDTH, HEIGHT);
-                        for (let i = 0; i < bufferLength; i++) {
-                            barHeight = dataArray[i] / 10;
+            let buttonPlay = document.querySelector(".music-header__button");
+            let isRendering = false;
+            let context = new (AudioContext || webkitAudioContext);
+            let audio = new Audio("https://complex.in.ua/yantarne");
+            audio.crossOrigin = "anonymous";
+            audio.volume = 1;
+            let analyser = context.createAnalyser();
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            analyser.fftSize = 512;
+            let audioSourceNode = context.createMediaElementSource(audio);
+            audioSourceNode.connect(analyser);
+            analyser.connect(context.destination);
+            let bufferLength = analyser.frequencyBinCount;
+            let dataArray = new Uint8Array(bufferLength);
+            let WIDTH = canvas.width;
+            let HEIGHT = canvas.height;
+            let barWidth = WIDTH / bufferLength;
+            let barHeight = HEIGHT;
+            function renderFrame() {
+                if (true === isRendering) {
+                    analyser.getByteFrequencyData(dataArray);
+                    let x = 0;
+                    ctx.clearRect(0, 0, WIDTH, HEIGHT);
+                    for (let i = 0; i < bufferLength; i++) {
+                        barHeight = dataArray[i] / 10;
+                        ctx.fillStyle = "white";
+                        ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+                        x += barWidth + 3;
+                        if (75 === i) {
+                            ctx.fillStyle = "rgba(0,0,0,0)";
+                            ctx.fillRect(x, HEIGHT - barHeight, 10 * barWidth, barHeight);
+                            ctx.font = "20px Montserrat";
                             ctx.fillStyle = "white";
-                            ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
-                            x += barWidth + 3;
-                            if (75 === i) {
-                                ctx.fillStyle = "rgba(0,0,0,0)";
-                                ctx.fillRect(x, HEIGHT - barHeight, 10 * barWidth, barHeight);
-                                ctx.font = "20px Montserrat";
-                                ctx.fillStyle = "white";
-                                ctx.fillText("88.9", 425, 37.5);
-                                x += barWidth + 80;
-                            }
+                            ctx.fillText("88.9", 425, 37.5);
+                            x += barWidth + 80;
                         }
-                        requestAnimationFrame(renderFrame);
-                    } else ctx.clearRect(0, 0, WIDTH, HEIGHT);
-                }
-                audio.addEventListener("canplay", (function() {
-                    let audioSourceNode = context.createMediaElementSource(audio);
-                    audioSourceNode.connect(analyser);
-                    analyser.connect(context.destination);
-                }));
-                buttonPlay.addEventListener("click", (function(e) {
-                    buttonPlay.classList.toggle("_active");
-                    let buttonPlayImg = document.querySelector(".music-header__button picture  source");
-                    if (buttonPlay.classList.contains("_active")) {
-                        getData();
-                        context.resume();
-                        audio.play();
-                        isRendering = true;
-                        renderFrame();
-                        buttonPlayImg.setAttribute("srcset", "img/icon-pause.webp");
-                    } else {
-                        audio.pause();
-                        isRendering = false;
-                        buttonPlayImg.setAttribute("srcset", "img/icon-play.webp");
                     }
-                }));
+                    requestAnimationFrame(renderFrame);
+                } else ctx.clearRect(0, 0, WIDTH, HEIGHT);
             }
-            vizualizer();
+            buttonPlay.addEventListener("click", (function(e) {
+                buttonPlay.classList.toggle("_active");
+                let buttonPlayImg = document.querySelector(".music-header__button picture  source");
+                if (buttonPlay.classList.contains("_active")) {
+                    getData();
+                    context.resume();
+                    audio.play();
+                    isRendering = true;
+                    renderFrame();
+                    buttonPlayImg.setAttribute("srcset", "img/icon-pause.webp");
+                } else {
+                    audio.pause();
+                    isRendering = false;
+                    buttonPlayImg.setAttribute("srcset", "img/icon-play.webp");
+                }
+            }));
             setInterval((function() {
                 getData();
             }), 4e3);
