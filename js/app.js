@@ -4665,7 +4665,7 @@
             let audio = new Audio("https://complex.in.ua/yantarne");
             audio.crossOrigin = "anonymous";
             audio.volume = 1;
-            audio.preload = false;
+            audio.preload = "none";
             let context = new (AudioContext || webkitAudioContext);
             let analyser = context.createAnalyser();
             let canvas = document.getElementById("myCanvas");
@@ -4708,8 +4708,8 @@
                 buttonPlay.classList.toggle("_active");
                 let buttonPlayImg = document.querySelector(".music-header__button picture  source");
                 if (buttonPlay.classList.contains("_active")) {
-                    audio.play();
                     context.resume();
+                    audio.play();
                     isRendering = true;
                     renderFrame();
                     buttonPlayImg.setAttribute("srcset", "img/icon-pause.webp");
