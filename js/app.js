@@ -4667,24 +4667,23 @@
                 audio.volume = 1;
                 let buttonPlay = document.querySelector(".music-header__button");
                 let context = new (window.AudioContext || window.webkitAudioContext);
-                var analyser = context.createAnalyser();
+                let analyser = context.createAnalyser();
                 let canvas = document.getElementById("myCanvas");
-                var ctx = canvas.getContext("2d");
+                let ctx = canvas.getContext("2d");
                 analyser.fftSize = 512;
-                ctx.lineWidth = 5;
-                var bufferLength = analyser.frequencyBinCount;
-                var dataArray = new Uint8Array(bufferLength);
-                var WIDTH = canvas.width;
-                var HEIGHT = canvas.height;
-                var barWidth = WIDTH / bufferLength;
-                var barHeight = HEIGHT;
+                let bufferLength = analyser.frequencyBinCount;
+                let dataArray = new Uint8Array(bufferLength);
+                let WIDTH = canvas.width;
+                let HEIGHT = canvas.height;
+                let barWidth = WIDTH / bufferLength;
+                let barHeight = HEIGHT;
                 let isRendering = false;
                 function renderFrame() {
                     if (true === isRendering) {
                         analyser.getByteFrequencyData(dataArray);
-                        var x = 0;
+                        let x = 0;
                         ctx.clearRect(0, 0, WIDTH, HEIGHT);
-                        for (var i = 0; i < bufferLength; i++) {
+                        for (let i = 0; i < bufferLength; i++) {
                             barHeight = dataArray[i] / 10;
                             ctx.fillStyle = "white";
                             ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
@@ -4694,7 +4693,7 @@
                                 ctx.fillRect(x, HEIGHT - barHeight, 10 * barWidth, barHeight);
                                 ctx.font = "20px Montserrat";
                                 ctx.fillStyle = "white";
-                                ctx.fillText("88.9", 425, 28);
+                                ctx.fillText("88.9", 425, 37.5);
                                 x += barWidth + 80;
                             }
                         }
@@ -4702,7 +4701,7 @@
                     } else ctx.clearRect(0, 0, WIDTH, HEIGHT);
                 }
                 audio.addEventListener("canplay", (function() {
-                    var audioSourceNode = context.createMediaElementSource(audio);
+                    let audioSourceNode = context.createMediaElementSource(audio);
                     audioSourceNode.connect(analyser);
                     analyser.connect(context.destination);
                 }));
