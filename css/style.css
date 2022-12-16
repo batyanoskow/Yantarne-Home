@@ -280,15 +280,15 @@ body {
   width: 100%;
 }
 
-@supports (height: clamp( 31.25rem , 18.7227722772rem  +  47.7227722772vw , 61.375rem )) {
+@supports (height: clamp( 43.75rem , 36.4207920792rem  +  27.9207920792vw , 61.375rem )) {
   .header__slide img {
-    height: clamp( 31.25rem , 18.7227722772rem  +  47.7227722772vw , 61.375rem );
+    height: clamp( 43.75rem , 36.4207920792rem  +  27.9207920792vw , 61.375rem );
   }
 }
 
-@supports not (height: clamp( 31.25rem , 18.7227722772rem  +  47.7227722772vw , 61.375rem )) {
+@supports not (height: clamp( 43.75rem , 36.4207920792rem  +  27.9207920792vw , 61.375rem )) {
   .header__slide img {
-    height: calc(31.25rem + 30.125 * (100vw - 26.25rem) / 63.125);
+    height: calc(43.75rem + 17.625 * (100vw - 26.25rem) / 63.125);
   }
 }
 
