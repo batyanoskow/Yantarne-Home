@@ -4655,73 +4655,90 @@
         const da = new DynamicAdapt("max");
         da.init();
         window.addEventListener("load", (function(event) {
+            let buttonPlay = document.querySelector(".music-header__button");
             async function getData() {
                 await fetch("https://complex.in.ua/status-json.xsl?mount=/yantarne").then((res => res.json())).then((data => {
                     let songNameField = document.querySelector(".music-header__text");
                     songNameField.innerText = data.icestats.source.title;
                 }));
             }
-            let buttonPlay = document.querySelector(".music-header__button");
-            let audio = new Audio("https://complex.in.ua/yantarne");
-            audio.crossOrigin = "anonymous";
-            audio.volume = 1;
-            audio.preload = "none";
-            let context = new (AudioContext || webkitAudioContext);
-            let audioSourceNode = context.createMediaElementSource(audio);
-            let analyser = context.createAnalyser();
-            analyser.fftSize = 512;
-            audioSourceNode.connect(analyser);
-            analyser.connect(context.destination);
-            let bufferLength = analyser.frequencyBinCount;
-            let dataArray = new Uint8Array(bufferLength);
-            let canvas = document.getElementById("myCanvas");
-            let ctx = canvas.getContext("2d");
-            let WIDTH = canvas.width;
-            let HEIGHT = canvas.height;
-            let barWidth = WIDTH / bufferLength;
-            let barHeight = HEIGHT;
-            let isRendering = false;
-            let x;
-            function renderFrame() {
-                if (true === isRendering) {
-                    analyser.getByteFrequencyData(dataArray);
-                    x = 0;
-                    ctx.clearRect(0, 0, WIDTH, HEIGHT);
-                    for (let i = 0; i < bufferLength; i++) {
-                        barHeight = dataArray[i] / 10;
-                        ctx.fillStyle = "white";
-                        ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
-                        x += barWidth + 3;
-                        if (75 === i) {
-                            ctx.fillStyle = "rgba(0,0,0,0)";
-                            ctx.fillRect(x, HEIGHT - barHeight, 10 * barWidth, barHeight);
-                            ctx.font = "20px Montserrat";
-                            ctx.fillStyle = "white";
-                            ctx.fillText("88.9", 425, 37.5);
-                            x += barWidth + 80;
-                        }
-                    }
-                    requestAnimationFrame(renderFrame);
-                } else ctx.clearRect(0, 0, WIDTH, HEIGHT);
-            }
-            buttonPlay.addEventListener("click", (function(e) {
-                buttonPlay.classList.toggle("_active");
-                let buttonPlayImg = document.querySelector(".music-header__button picture  source");
-                if (buttonPlay.classList.contains("_active")) {
-                    context.resume();
-                    audio.play();
-                    isRendering = true;
-                    renderFrame();
-                    buttonPlayImg.setAttribute("srcset", "img/icon-pause.webp");
-                } else {
-                    audio.pause();
-                    isRendering = false;
-                    buttonPlayImg.setAttribute("srcset", "img/icon-play.webp");
-                }
-            }));
             setInterval((function() {
                 getData();
             }), 4e3);
+            if (/iPhone/i.test(navigator.userAgent)) {
+                console.warn("Iphone doesn`t support visualizer");
+                buttonPlay.addEventListener("click", (function(e) {
+                    buttonPlay.classList.toggle("_active");
+                    let buttonPlayImg = document.querySelector(".music-header__button picture  source");
+                    if (buttonPlay.classList.contains("_active")) {
+                        getData();
+                        audio.play();
+                        buttonPlayImg.setAttribute("srcset", "img/icon-pause.webp");
+                    } else {
+                        audio.pause();
+                        buttonPlayImg.setAttribute("srcset", "img/icon-play.webp");
+                    }
+                }));
+            } else {
+                let context = new (window.AudioContext || window.webkitAudioContext);
+                let audio = new Audio("https://complex.in.ua/yantarne");
+                audio.preload = "none";
+                audio.volume = 1;
+                audio.crossOrigin = "anonymous";
+                let analyser = context.createAnalyser();
+                analyser.fftSize = 512;
+                let bufferLength = analyser.frequencyBinCount;
+                let audioSourceNode = context.createMediaElementSource(audio);
+                audioSourceNode.connect(analyser);
+                analyser.connect(context.destination);
+                let dataArray = new Uint8Array(bufferLength);
+                let canvas = document.getElementById("myCanvas");
+                let ctx = canvas.getContext("2d");
+                let WIDTH = canvas.width;
+                let HEIGHT = canvas.height;
+                let barWidth = WIDTH / 256;
+                let barHeight = HEIGHT;
+                let isRendering = false;
+                let x;
+                function renderFrame() {
+                    if (true === isRendering) {
+                        requestAnimationFrame(renderFrame);
+                        analyser.getByteFrequencyData(dataArray);
+                        x = 0;
+                        ctx.clearRect(0, 0, WIDTH, HEIGHT);
+                        for (let i = 0; i < bufferLength; i++) {
+                            barHeight = dataArray[i] / 10;
+                            ctx.fillStyle = "white";
+                            ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+                            x += barWidth + 3;
+                            if (75 === i) {
+                                ctx.fillStyle = "rgba(0,0,0,0)";
+                                ctx.fillRect(x, HEIGHT - barHeight, 10 * barWidth, barHeight);
+                                ctx.font = "20px Montserrat";
+                                ctx.fillStyle = "white";
+                                ctx.fillText("88.9", 425, 37.5);
+                                x += barWidth + 80;
+                            }
+                        }
+                    } else ctx.clearRect(0, 0, WIDTH, HEIGHT);
+                }
+                buttonPlay.addEventListener("click", (function(e) {
+                    buttonPlay.classList.toggle("_active");
+                    let buttonPlayImg = document.querySelector(".music-header__button picture  source");
+                    if (buttonPlay.classList.contains("_active")) {
+                        getData();
+                        context.resume();
+                        audio.play();
+                        isRendering = true;
+                        renderFrame();
+                        buttonPlayImg.setAttribute("srcset", "img/icon-pause.webp");
+                    } else {
+                        audio.pause();
+                        isRendering = false;
+                        buttonPlayImg.setAttribute("srcset", "img/icon-play.webp");
+                    }
+                }));
+            }
         }));
         window["FLS"] = true;
         isWebp();

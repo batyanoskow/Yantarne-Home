@@ -1626,8 +1626,18 @@ body {
 }
 
 @media (max-width: 47.99875em) {
+  .header {
+    min-height: 100vh;
+  }
+
   .music-header__text {
     text-align: center;
+  }
+
+  .header__slide img {
+    width: auto !important;
+    background-size: cover;
+    height: 100%;
   }
 
   .friends__sub-title {
