@@ -4665,6 +4665,10 @@
             setInterval((function() {
                 getData();
             }), 4e3);
+            let audio = new Audio("https://complex.in.ua/yantarne");
+            audio.preload = "none";
+            audio.volume = 1;
+            audio.crossOrigin = "anonymous";
             if (/iPhone/i.test(navigator.userAgent)) {
                 console.warn("Iphone doesn`t support visualizer");
                 buttonPlay.addEventListener("click", (function(e) {
@@ -4681,10 +4685,6 @@
                 }));
             } else {
                 let context = new (window.AudioContext || window.webkitAudioContext);
-                let audio = new Audio("https://complex.in.ua/yantarne");
-                audio.preload = "none";
-                audio.volume = 1;
-                audio.crossOrigin = "anonymous";
                 let analyser = context.createAnalyser();
                 analyser.fftSize = 512;
                 let bufferLength = analyser.frequencyBinCount;
