@@ -1108,15 +1108,15 @@ body {
   margin-bottom: 4.375rem;
 }
 
-@supports (font-size: clamp( 2rem , 1.7117117117rem  +  1.4414414414vw , 3rem )) {
+@supports (font-size: clamp( 1.5rem , 1.0675675676rem  +  2.1621621622vw , 3rem )) {
   .team__title {
-    font-size: clamp( 2rem , 1.7117117117rem  +  1.4414414414vw , 3rem );
+    font-size: clamp( 1.5rem , 1.0675675676rem  +  2.1621621622vw , 3rem );
   }
 }
 
-@supports not (font-size: clamp( 2rem , 1.7117117117rem  +  1.4414414414vw , 3rem )) {
+@supports not (font-size: clamp( 1.5rem , 1.0675675676rem  +  2.1621621622vw , 3rem )) {
   .team__title {
-    font-size: calc(2rem + 1 * (100vw - 20rem) / 69.375);
+    font-size: calc(1.5rem + 1.5 * (100vw - 20rem) / 69.375);
   }
 }
 
