@@ -1628,6 +1628,7 @@ body {
 @media (max-width: 47.99875em) {
   .header {
     min-height: 100vh;
+    height: -webkit-fill-available;
   }
 
   .music-header__text {

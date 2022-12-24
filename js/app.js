@@ -921,7 +921,7 @@
                     easing: "easeOutQuad"
                 };
                 document.documentElement.classList.contains("menu-open") ? menuClose() : null;
-                if ("undefined" !== typeof SmoothScroll) (new SmoothScroll).animateScroll(targetBlockElement, "", options); else if (window.innerWidth < 911.99) setTimeout((function() {
+                if ("undefined" !== typeof SmoothScroll) (new SmoothScroll).animateScroll(targetBlockElement, "", options); else if (window.innerWidth < 911.99) {
                     let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
                     targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
                     targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
@@ -929,7 +929,7 @@
                         top: targetBlockElementPosition,
                         behavior: "smooth"
                     });
-                }), 800); else {
+                } else {
                     let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
                     targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
                     targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
