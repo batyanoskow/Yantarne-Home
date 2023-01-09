@@ -4506,7 +4506,7 @@
             if (document.querySelector(".swiper1")) new core(".swiper1", {
                 modules: [ Lazy, Autoplay ],
                 freeMode: false,
-                spaceBetween: 0,
+                spaceBetween: 100,
                 grabCursor: false,
                 loop: true,
                 preloadImages: false,
@@ -4516,9 +4516,19 @@
                     enabled: true,
                     delay: 1
                 },
-                speed: 4500,
+                speed: 3e3,
                 effect: "",
-                slidesPerView: 3,
+                breakpoints: {
+                    319.99: {
+                        slidesPerView: 1
+                    },
+                    768.99: {
+                        slidesPerView: 2
+                    },
+                    1150: {
+                        slidesPerView: 3
+                    }
+                },
                 on: {}
             });
         }
