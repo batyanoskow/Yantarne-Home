@@ -1328,6 +1328,30 @@ body {
   width: 30%;
 }
 
+.friends__slide {
+  max-width: 100% !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.swiper1 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear;
+       -o-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
 .swiper {
   overflow: hidden;
 }

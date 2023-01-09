@@ -921,7 +921,15 @@
                     easing: "easeOutQuad"
                 };
                 document.documentElement.classList.contains("menu-open") ? menuClose() : null;
-                if ("undefined" !== typeof SmoothScroll) (new SmoothScroll).animateScroll(targetBlockElement, "", options); else {
+                if ("undefined" !== typeof SmoothScroll) (new SmoothScroll).animateScroll(targetBlockElement, "", options); else if (window.innerWidth < 911.99) {
+                    let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
+                    targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
+                    targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
+                    window.scrollTo({
+                        top: targetBlockElementPosition,
+                        behavior: "smooth"
+                    });
+                } else {
                     let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
                     targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
                     targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
@@ -4480,6 +4488,8 @@
                 spaceBetween: 0,
                 autoHeight: false,
                 speed: 800,
+                preloadImages: false,
+                lazy: true,
                 allowTouchMove: false,
                 loop: true,
                 effect: "fade",
@@ -4491,6 +4501,24 @@
                     prevEl: ".swiper-button-prev",
                     nextEl: ".swiper-button-next"
                 },
+                on: {}
+            });
+            if (document.querySelector(".swiper1")) new core(".swiper1", {
+                modules: [ Lazy, Autoplay ],
+                freeMode: false,
+                spaceBetween: 0,
+                grabCursor: false,
+                loop: true,
+                preloadImages: false,
+                lazy: true,
+                allowTouchMove: false,
+                autoplay: {
+                    enabled: true,
+                    delay: 1
+                },
+                speed: 4500,
+                effect: "",
+                slidesPerView: 3,
                 on: {}
             });
         }

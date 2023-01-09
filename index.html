@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221224110214">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230109183140">
 
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,13 +22,13 @@
 
 
 					<div class="header__slide swiper-slide">
-						<picture><source srcset="img/bg1.webp" type="image/webp"><img src="img/bg1.png" alt="" class="_lazy-loaded"></picture>
+						<picture><source srcset="img/bg1.webp" type="image/webp"><img src="img/bg1.png" alt="" class="swiper-lazy"></picture>
 					</div>
 					<div class="header__slide swiper-slide">
-						<picture><source srcset="img/bg2.webp" type="image/webp"><img src="img/bg2.png" alt="" class="_lazy-loaded"></picture>
+						<picture><source srcset="img/bg2.webp" type="image/webp"><img src="img/bg2.png" alt="" class="swiper-lazy"></picture>
 					</div>
 					<div class="header__slide swiper-slide">
-						<picture><source srcset="img/bg3.webp" type="image/webp"><img src="img/bg3.png" alt="" class="_lazy-loaded"></picture>
+						<picture><source srcset="img/bg3.webp" type="image/webp"><img src="img/bg3.png" alt="" class="swiper-lazy"></picture>
 					</div>
 				</div>
 
@@ -40,10 +40,10 @@
 					<a href="#" class="header__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt=""></picture></a>
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#" class="menu__link" data-goto="#efir">розклад</a></li>
+							<li class="menu__item"><a href="#" class="menu__link" data-goto="#efir">Розклад</a></li>
 							<li class="menu__item"><a href="#" class="menu__link" data-goto="#about">Хто ми</a></li>
-							<li class="menu__item"><a href="#" class="menu__link" data-goto="#friends">НАші друзі</a></li>
-							<li class="menu__item"><a href="#" class="menu__link" data-goto="#footer">контакти</a></li>
+							<li class="menu__item"><a href="#" class="menu__link" data-goto="#friends">Нaші друзі</a></li>
+							<li class="menu__item"><a href="#" class="menu__link" data-goto="#footer">Контакти</a></li>
 						</ul>
 					</nav>
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
@@ -185,14 +185,18 @@
 					</div>
 				</div>
 			</div>
+			<!--Developed By https://github.com/AndriyPapirnyk-->
 			<div class="page__friends friends" id="friends">
 				<div class="friends__container">
 					<h1 class="friends__title">Наші <span>Друзі</span></h1>
 					<p class="friends__sub-title">Тут може бути ваш логотип</p>
-					<div class="friends__images">
-						<picture><source data-srcset="img/friends1.webp" type="image/webp"><img data-src="img/friends1.png" alt="" class="_lazy-loaded"></picture>
-						<picture><source data-srcset="img/friends2.webp" type="image/webp"><img data-src="img/friends2.png" alt="" class="_lazy-loaded"></picture>
-						<picture><source data-srcset="img/friends3.webp" type="image/webp"><img data-src="img/friends3.png" alt="" class="_lazy-loaded"></picture>
+
+					<div class="friends__slider swiper1">
+						<div class="friends__wrapper swiper-wrapper">
+							<div class="friends__slide swiper-slide swiper-slide__item1-4"><picture><source data-srcset="img/friends1.webp" type="image/webp"><img data-src="img/friends1.png" class="swiper-lazy" alt=""></picture></div>
+							<div class="friends__slide swiper-slide swiper-slide__item2-5"><picture><source data-srcset="img/friends2.webp" type="image/webp"><img data-src="img/friends2.png" class="swiper-lazy" alt=""></picture></div>
+							<div class="friends__slide swiper-slide swiper-slide__item3-6"><picture><source data-srcset="img/friends3.webp" type="image/webp"><img data-src="img/friends3.png" class="swiper-lazy" alt=""></picture></div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -237,7 +241,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20221224110214"></script>
+	<script src="js/app.min.js?_v=20230109183140"></script>
 </body>
 
 </html>
