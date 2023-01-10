@@ -252,12 +252,24 @@ body {
 
 .header {
   position: relative;
-  max-height: 1000px;
+  min-height: 100vh;
+  height: -webkit-fill-available;
 }
 
 .header__container {
   position: relative;
   z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 100vh;
 }
 
 .header__logo {
@@ -278,18 +290,7 @@ body {
 
 .header__slide img {
   width: 100%;
-}
-
-@supports (height: clamp( 43.75rem , 38.6689189189rem  +  25.4054054054vw , 61.375rem )) {
-  .header__slide img {
-    height: clamp( 43.75rem , 38.6689189189rem  +  25.4054054054vw , 61.375rem );
-  }
-}
-
-@supports not (height: clamp( 43.75rem , 38.6689189189rem  +  25.4054054054vw , 61.375rem )) {
-  .header__slide img {
-    height: calc(43.75rem + 17.625 * (100vw - 20rem) / 69.375);
-  }
+  height: 100%;
 }
 
 .swiper {
@@ -419,7 +420,6 @@ body {
   grid-template-columns: 0.3fr 1fr;
   -ms-grid-rows: 0.2fr 1fr;
   grid-template-rows: 0.2fr 1fr;
-  margin-bottom: 14.375rem;
 }
 
 .music-header__button {
@@ -537,7 +537,9 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
-  margin-top: auto;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
   margin-bottom: 5.625rem;
 }
 
@@ -1650,11 +1652,6 @@ body {
 }
 
 @media (max-width: 47.99875em) {
-  .header {
-    height: 100vh;
-    min-height: -webkit-fill-available;
-  }
-
   .music-header__text {
     text-align: center;
   }
