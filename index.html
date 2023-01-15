@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230110210054">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230115134129">
 
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,13 +22,13 @@
 
 
 					<div class="header__slide swiper-slide">
-						<picture><source srcset="img/bg1.webp" type="image/webp"><img src="img/bg1.png" alt="" class="swiper-lazy"></picture>
+						<picture><source srcset="img/bg1.webp" type="image/webp"><img src="img/bg1.png" alt=""></picture>
 					</div>
 					<div class="header__slide swiper-slide">
-						<picture><source srcset="img/bg2.webp" type="image/webp"><img src="img/bg2.png" alt="" class="swiper-lazy"></picture>
+						<picture><source srcset="img/bg2.webp" type="image/webp"><img src="img/bg2.png" alt=""></picture>
 					</div>
 					<div class="header__slide swiper-slide">
-						<picture><source srcset="img/bg3.webp" type="image/webp"><img src="img/bg3.png" alt="" class="swiper-lazy"></picture>
+						<picture><source srcset="img/bg3.webp" type="image/webp"><img src="img/bg3.png" alt=""></picture>
 					</div>
 				</div>
 
@@ -37,28 +37,28 @@
 
 			<div class="header__container">
 				<div class="header__menu menu">
-					<a href="#" class="header__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt=""></picture></a>
+					<a href="#" class="header__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="Yantarne"></picture></a>
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#" class="menu__link" data-goto="#efir">Розклад</a></li>
-							<li class="menu__item"><a href="#" class="menu__link" data-goto="#about">Хто ми</a></li>
-							<li class="menu__item"><a href="#" class="menu__link" data-goto="#friends">Нaші друзі</a></li>
-							<li class="menu__item"><a href="#" class="menu__link" data-goto="#footer">Контакти</a></li>
+							<li class="menu__item" data-goto="#efir"><a href="#" class="menu__link">Розклад</a></li>
+							<li class="menu__item" data-goto="#about"><a href="#" class="menu__link">Хто ми</a></li>
+							<li class="menu__item" data-goto="#friends"><a href="#" class="menu__link">Нaші друзі</a></li>
+							<li class="menu__item" data-goto="#footer"><a href="#" class="menu__link">Контакти</a></li>
 						</ul>
 					</nav>
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 				</div>
 				<div class="header__music music-header">
 					<div class="music-header__nav">
-						<button class="music-header__button"><picture><source srcset="img/icon-play.webp" type="image/webp"><img src="img/icon-play.png" alt=""></picture></button>
+						<button class="music-header__button"><i class="icon-play"></i></button>
 					</div>
 
 					<p class="music-header__text"></p>
 					<canvas width="600" height="40" class="music-header__sound" id="myCanvas"></canvas>
 				</div>
 				<div class="header__buttons">
-					<button type="button" class="swiper-button-prev" data-da=".music-header__nav , 991.99 , 0"></button>
-					<button type="button" class="swiper-button-next" data-da=".music-header__nav , 991.99 , 3"></button>
+					<button type="button" class="swiper-button-prev"></button>
+					<button type="button" class="swiper-button-next"></button>
 				</div>
 			</div>
 
@@ -96,10 +96,10 @@
 						<p class="card-efir__sub-title">Слідкуй за анонсами в соцмережах<span></span></p>
 					</div>
 					<div class="efir__inform">
-						<h1 class="efir__title">Розклад<span>Ефірів</span></h1>
+						<h1 class="efir__title" data-da=".efir , 991.99 , 0">Розклад<span>Ефірів</span></h1>
 						<p class="efir__sub-title">Ввімкнувши 88.9 ти:</p>
 						<p class="efir__text">Знайдеш найкращу українську музику! Почуєш музичні новинки потрапиш на ранкове шоу ”не спати” та денне шоу ”тай таке”. Дізнаєшся всі актуальні новини світу, країни і громади. Відкриєш для себе програму ”Янтерв’ю” , де познайомишся з цікавими людьми свого міста.</p>
-						<button class="efir__button" data-goto="#footer">Звязатися з нами</button>
+						<button class="efir__button">Звязатися з нами</button>
 					</div>
 				</div>
 			</div>
@@ -122,7 +122,8 @@
 				</div>
 
 			</div>
-			<div class="page__team team" id="team">
+
+			<div class="page__team team">
 				<div class="team__container">
 					<h1 class="team__title">Команда <span>Yantarne.fm</span></h1>
 					<div class="team__grid">
@@ -185,7 +186,6 @@
 					</div>
 				</div>
 			</div>
-			<!--Developed By https://github.com/AndriyPapirnyk-->
 			<div class="page__friends friends" id="friends">
 				<div class="friends__container">
 					<h1 class="friends__title">Наші <span>Друзі</span></h1>
@@ -241,7 +241,8 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230110210054"></script>
+	<script src="js/app.min.js?_v=20230115134129"></script>
+
 </body>
 
 </html>

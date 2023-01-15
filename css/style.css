@@ -2,6 +2,53 @@
 
 @charset "UTF-8";
 
+[class*=_icon-]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*=_icon-]:before {
+  display: block;
+}
+
+@font-face {
+  font-family: "icons";
+  src: url("fonts/icons.eot?yeinw");
+  src: url("fonts/icons.eot?yeinw#iefix") format("embedded-opentype"), url("fonts/icons.ttf?yeinw") format("truetype"), url("fonts/icons.woff?yeinw") format("woff"), url("fonts/icons.svg?yeinw#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^=icon-],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-play:before {
+  content: "\ea1c";
+}
+
+.icon-pause:before {
+  content: "\ea1d";
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -195,14 +242,7 @@ body {
 }
 
 .wrapper {
-  min-height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  position: relative;
   overflow: hidden;
 }
 
@@ -250,10 +290,21 @@ body {
      object-fit: contain;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FF344D;
+  border-radius: 1.25rem;
+}
+
 .header {
   position: relative;
-  min-height: 100vh;
-  height: -webkit-fill-available;
 }
 
 .header__container {
@@ -262,6 +313,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-height: 100vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -269,7 +321,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  min-height: 100vh;
 }
 
 .header__logo {
@@ -428,7 +479,7 @@ body {
       grid-row-start: 1;
   -ms-grid-row-span: 2;
   grid-row-end: 3;
-  background-color: #FF344D;
+  background-color: rgb(255, 0, 0);
   border-radius: 50%;
   z-index: 5;
   position: relative;
@@ -444,6 +495,7 @@ body {
   -webkit-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
+  color: #fff;
   -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.24), 0 0 0 3px rgba(255, 255, 255, 0.8);
           box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.24), 0 0 0 3px rgba(255, 255, 255, 0.8);
 }
@@ -470,6 +522,23 @@ body {
   .music-header__button {
     height: calc(5rem + 4.1875 * (100vw - 20rem) / 71.25);
   }
+}
+
+@supports (font-size: clamp( 2.5rem , 2.149122807rem  +  1.7543859649vw , 3.75rem )) {
+  .music-header__button {
+    font-size: clamp( 2.5rem , 2.149122807rem  +  1.7543859649vw , 3.75rem );
+  }
+}
+
+@supports not (font-size: clamp( 2.5rem , 2.149122807rem  +  1.7543859649vw , 3.75rem )) {
+  .music-header__button {
+    font-size: calc(2.5rem + 1.25 * (100vw - 20rem) / 71.25);
+  }
+}
+
+.music-header__button img {
+  width: 100px;
+  height: 100px;
 }
 
 .music-header__button._active::after {
@@ -665,6 +734,15 @@ body {
 }
 
 .contacts-footer__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 1.5rem;
   font-weight: 400;
   color: #fff;
@@ -788,6 +866,7 @@ body {
   font-weight: 700;
   margin-bottom: 3.125rem;
   color: #333;
+  text-align: center;
 }
 
 @supports (font-size: clamp( 2rem , 1.7192982456rem  +  1.4035087719vw , 3rem )) {
@@ -1108,6 +1187,7 @@ body {
   font-weight: 700;
   color: #333;
   margin-bottom: 4.375rem;
+  text-align: center;
 }
 
 @supports (font-size: clamp( 1.5rem , 1.0789473684rem  +  2.1052631579vw , 3rem )) {
@@ -1124,14 +1204,17 @@ body {
 
 .team__title span {
   color: #FF344D;
+  margin-top: 10 px;
 }
 
 .team__grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3.125rem;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[3];
+  grid-template-rows: repeat(3, 1fr);
+  gap: 50px;
 }
 
 .card-team {
@@ -1153,8 +1236,21 @@ body {
   overflow: hidden;
 }
 
+@supports (height: clamp( 11.25rem , 10.4254385965rem  +  4.1228070175vw , 14.1875rem )) {
+  .card-team__img {
+    height: clamp( 11.25rem , 10.4254385965rem  +  4.1228070175vw , 14.1875rem );
+  }
+}
+
+@supports not (height: clamp( 11.25rem , 10.4254385965rem  +  4.1228070175vw , 14.1875rem )) {
+  .card-team__img {
+    height: calc(11.25rem + 2.9375 * (100vw - 20rem) / 71.25);
+  }
+}
+
 .card-team__img img {
   width: 100%;
+  height: 100%;
 }
 
 .card-team__img::before {
@@ -1332,6 +1428,7 @@ body {
 
 .friends__slide {
   max-width: 100% !important;
+  height: 14.625rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1405,6 +1502,11 @@ body {
 }
 
 @media (max-width: 61.99875em) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+
   .music-header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1649,6 +1751,11 @@ body {
   .about__sub-title {
     margin-bottom: 4.6875rem;
   }
+
+  .team__grid {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 47.99875em) {
@@ -1676,7 +1783,6 @@ body {
 
   .footer {
     min-height: 100vh;
-    height: -webkit-fill-available;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1695,7 +1801,7 @@ body {
 
 @media (max-width: 29.99875em) {
   .contacts-footer__item {
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
   }
 
   .efir__container {
