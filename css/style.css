@@ -889,25 +889,26 @@ body {
 .efir__sub-title {
   font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 1.25rem;
+  margin-bottom: 2.5rem;
   color: #333;
 }
 
 .efir__text {
-  line-height: 100%;
+  line-height: 120%;
+  font-weight: 400;
   text-align: center;
   margin-bottom: 4.375rem;
 }
 
-@supports (font-size: clamp( 1.25rem , 1.1096491228rem  +  0.701754386vw , 1.75rem )) {
+@supports (font-size: clamp( 1rem , 0.8947368421rem  +  0.5263157895vw , 1.375rem )) {
   .efir__text {
-    font-size: clamp( 1.25rem , 1.1096491228rem  +  0.701754386vw , 1.75rem );
+    font-size: clamp( 1rem , 0.8947368421rem  +  0.5263157895vw , 1.375rem );
   }
 }
 
-@supports not (font-size: clamp( 1.25rem , 1.1096491228rem  +  0.701754386vw , 1.75rem )) {
+@supports not (font-size: clamp( 1rem , 0.8947368421rem  +  0.5263157895vw , 1.375rem )) {
   .efir__text {
-    font-size: calc(1.25rem + 0.5 * (100vw - 20rem) / 71.25);
+    font-size: calc(1rem + 0.375 * (100vw - 20rem) / 71.25);
   }
 }
 
@@ -934,12 +935,6 @@ body {
   .efir__button {
     font-size: calc(1.25rem + 0.25 * (100vw - 20rem) / 71.25);
   }
-}
-
-.efir__button:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF4259), to(#FF8695));
-  background: -o-linear-gradient(#FF4259 0%, #FF8695 100%);
-  background: linear-gradient(#FF4259 0%, #FF8695 100%);
 }
 
 .card-efir__img {
@@ -1186,28 +1181,40 @@ body {
 .team__title {
   font-weight: 700;
   color: #333;
-  margin-bottom: 4.375rem;
   text-align: center;
+  line-height: 130%;
 }
 
-@supports (font-size: clamp( 1.5rem , 1.0789473684rem  +  2.1052631579vw , 3rem )) {
+@supports (font-size: clamp( 1.40625rem , 0.9588815789rem  +  2.2368421053vw , 3rem )) {
   .team__title {
-    font-size: clamp( 1.5rem , 1.0789473684rem  +  2.1052631579vw , 3rem );
+    font-size: clamp( 1.40625rem , 0.9588815789rem  +  2.2368421053vw , 3rem );
   }
 }
 
-@supports not (font-size: clamp( 1.5rem , 1.0789473684rem  +  2.1052631579vw , 3rem )) {
+@supports not (font-size: clamp( 1.40625rem , 0.9588815789rem  +  2.2368421053vw , 3rem )) {
   .team__title {
-    font-size: calc(1.5rem + 1.5 * (100vw - 20rem) / 71.25);
+    font-size: calc(1.40625rem + 1.59375 * (100vw - 20rem) / 71.25);
+  }
+}
+
+@supports (margin-bottom: clamp( 2.1875rem , 1.5734649123rem  +  3.0701754386vw , 4.375rem )) {
+  .team__title {
+    margin-bottom: clamp( 2.1875rem , 1.5734649123rem  +  3.0701754386vw , 4.375rem );
+  }
+}
+
+@supports not (margin-bottom: clamp( 2.1875rem , 1.5734649123rem  +  3.0701754386vw , 4.375rem )) {
+  .team__title {
+    margin-bottom: calc(2.1875rem + 2.1875 * (100vw - 20rem) / 71.25);
   }
 }
 
 .team__title span {
   color: #FF344D;
-  margin-top: 10 px;
 }
 
 .team__grid {
+  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -1218,6 +1225,7 @@ body {
 }
 
 .card-team {
+  width: 100%;
   -webkit-box-shadow: 0 0 4px rgba(163, 163, 163, 0.42);
           box-shadow: 0 0 4px rgba(163, 163, 163, 0.42);
 }
@@ -1236,15 +1244,15 @@ body {
   overflow: hidden;
 }
 
-@supports (height: clamp( 11.25rem , 10.4254385965rem  +  4.1228070175vw , 14.1875rem )) {
+@supports (height: clamp( 11.25rem , 9.1271929825rem  +  10.6140350877vw , 18.8125rem )) {
   .card-team__img {
-    height: clamp( 11.25rem , 10.4254385965rem  +  4.1228070175vw , 14.1875rem );
+    height: clamp( 11.25rem , 9.1271929825rem  +  10.6140350877vw , 18.8125rem );
   }
 }
 
-@supports not (height: clamp( 11.25rem , 10.4254385965rem  +  4.1228070175vw , 14.1875rem )) {
+@supports not (height: clamp( 11.25rem , 9.1271929825rem  +  10.6140350877vw , 18.8125rem )) {
   .card-team__img {
-    height: calc(11.25rem + 2.9375 * (100vw - 20rem) / 71.25);
+    height: calc(11.25rem + 7.5625 * (100vw - 20rem) / 71.25);
   }
 }
 
@@ -1305,25 +1313,58 @@ body {
 
 .card-team__title {
   margin-top: 1.875rem;
-  font-size: 1.25rem;
   color: #ACACAC;
   text-align: center;
   margin-bottom: 0.625rem;
 }
 
+@supports (font-size: clamp( 1rem , 0.9298245614rem  +  0.350877193vw , 1.25rem )) {
+  .card-team__title {
+    font-size: clamp( 1rem , 0.9298245614rem  +  0.350877193vw , 1.25rem );
+  }
+}
+
+@supports not (font-size: clamp( 1rem , 0.9298245614rem  +  0.350877193vw , 1.25rem )) {
+  .card-team__title {
+    font-size: calc(1rem + 0.25 * (100vw - 20rem) / 71.25);
+  }
+}
+
 .card-team__sub-title {
   font-weight: 600;
-  font-size: 1.5rem;
   color: #333;
   margin-bottom: 2.1875rem;
   text-align: center;
 }
 
+@supports (font-size: clamp( 1.25rem , 1.1798245614rem  +  0.350877193vw , 1.5rem )) {
+  .card-team__sub-title {
+    font-size: clamp( 1.25rem , 1.1798245614rem  +  0.350877193vw , 1.5rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.25rem , 1.1798245614rem  +  0.350877193vw , 1.5rem )) {
+  .card-team__sub-title {
+    font-size: calc(1.25rem + 0.25 * (100vw - 20rem) / 71.25);
+  }
+}
+
 .card-team__link {
   color: #3B569E;
-  font-size: 1.25rem;
   text-align: center;
   margin-bottom: 3.125rem;
+}
+
+@supports (font-size: clamp( 1rem , 0.9298245614rem  +  0.350877193vw , 1.25rem )) {
+  .card-team__link {
+    font-size: clamp( 1rem , 0.9298245614rem  +  0.350877193vw , 1.25rem );
+  }
+}
+
+@supports not (font-size: clamp( 1rem , 0.9298245614rem  +  0.350877193vw , 1.25rem )) {
+  .card-team__link {
+    font-size: calc(1rem + 0.25 * (100vw - 20rem) / 71.25);
+  }
 }
 
 .friends {
