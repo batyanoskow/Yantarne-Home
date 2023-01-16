@@ -1261,6 +1261,15 @@ body {
   height: 100%;
 }
 
+.card-team__img picture {
+  width: 100%;
+}
+
+.card-team__img picture img {
+  width: 100%;
+  height: 100%;
+}
+
 .card-team__img::before {
   content: "loremdasdasdsqad";
   width: 100%;
@@ -1533,13 +1542,6 @@ body {
 
 .swiper-button-lock {
   display: none !important;
-}
-
-@media (max-width: 600.99px) {
-  .team__grid {
-    -ms-grid-columns: (1fr)[1];
-    grid-template-columns: repeat(1, 1fr);
-  }
 }
 
 @media (max-width: 61.99875em) {
@@ -1833,6 +1835,11 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+
+  .team__grid {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .friends__sub-title {
