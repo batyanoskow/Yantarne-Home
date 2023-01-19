@@ -1090,15 +1090,30 @@ body {
 }
 
 .contacts-footer__img {
-  color: #fff;
-  font-size: 2.5rem;
-}
-
-.contacts-footer__img:hover {
-  color: #FF344D;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.625rem;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #230123;
+  font-size: 1.875rem;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+
+.contacts-footer__img:hover {
+  background-color: #230123;
+  color: #FF344D;
 }
 
 .contacts-footer__img:not(:last-child) {
@@ -1896,9 +1911,19 @@ body {
 
 @media (max-width: 640.98px) {
   .team__grid {
-    -ms-grid-columns: (1fr)[1];
-    grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
 @supports (width: clamp( 20rem , 5.7453163182rem  +  54.303556883vw , 27.5rem )) {
@@ -1920,7 +1945,7 @@ body {
   }
 }
 
-@media (max-width: 399.98) {
+@media (max-width: 399.98px) {
   .card-team {
     width: 100%;
   }
