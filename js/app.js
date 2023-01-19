@@ -4851,7 +4851,7 @@
             async function getData() {
                 await fetch("https://complex.in.ua/status-json.xsl?mount=/yantarne").then((res => res.json())).then((data => {
                     let songNameField = document.querySelector(".music-header__text");
-                    songNameField.innerText = data.icestats.source.title;
+                    if (void 0 == data.icestats.source.title) songNameField.innerText = ""; else songNameField.innerText = data.icestats.source.title;
                 }));
             }
             getData();
