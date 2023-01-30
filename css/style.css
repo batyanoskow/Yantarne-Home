@@ -1574,18 +1574,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   -ms-grid-rows: (1fr)[3];
   grid-template-rows: repeat(3, 1fr);
-}
-
-@supports (gap: clamp( 1.5625rem , 1.1239035088rem  +  2.1929824561vw , 3.125rem )) {
-  .team__grid {
-    gap: clamp( 1.5625rem , 1.1239035088rem  +  2.1929824561vw , 3.125rem );
-  }
-}
-
-@supports not (gap: clamp( 1.5625rem , 1.1239035088rem  +  2.1929824561vw , 3.125rem )) {
-  .team__grid {
-    gap: calc(1.5625rem + 1.5625 * (100vw - 20rem) / 71.25);
-  }
+  gap: 1.5625rem;
 }
 
 .card-team {
@@ -1608,19 +1597,21 @@ body {
   overflow: hidden;
 }
 
-@supports (height: clamp( 11.25rem , 9.1271929825rem  +  10.6140350877vw , 18.8125rem )) {
+@supports (height: clamp( 17.5rem , 14.8684210526rem  +  13.1578947368vw , 26.875rem )) {
   .card-team__img {
-    height: clamp( 11.25rem , 9.1271929825rem  +  10.6140350877vw , 18.8125rem );
+    height: clamp( 17.5rem , 14.8684210526rem  +  13.1578947368vw , 26.875rem );
   }
 }
 
-@supports not (height: clamp( 11.25rem , 9.1271929825rem  +  10.6140350877vw , 18.8125rem )) {
+@supports not (height: clamp( 17.5rem , 14.8684210526rem  +  13.1578947368vw , 26.875rem )) {
   .card-team__img {
-    height: calc(11.25rem + 7.5625 * (100vw - 20rem) / 71.25);
+    height: calc(17.5rem + 9.375 * (100vw - 20rem) / 71.25);
   }
 }
 
 .card-team__img img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
