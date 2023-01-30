@@ -848,6 +848,7 @@
                     setAutoplayYoutube: true,
                     classes: {
                         popup: "popup",
+                        popupWrapper: "popup__wrapper",
                         popupContent: "popup__content",
                         popupActive: "popup_show",
                         bodyActive: "popup-show"
@@ -911,7 +912,6 @@
             }
             eventsPopup() {
                 document.addEventListener("click", function(e) {
-                    e.preventDefault();
                     const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`);
                     if (buttonOpen) {
                         e.preventDefault();
