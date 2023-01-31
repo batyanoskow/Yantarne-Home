@@ -4683,7 +4683,7 @@
                     enabled: true,
                     delay: 1
                 },
-                speed: 4e3,
+                speed: 1e4,
                 effect: "",
                 breakpoints: {
                     319.99: {
@@ -4896,10 +4896,10 @@
                     if (57 === i) {
                         ctx.fillStyle = "rgba(0,0,0,0)";
                         ctx.fillRect(x, HEIGHT - barHeight, 10 * barWidth, barHeight);
-                        ctx.font = "20px Montserrat";
+                        ctx.font = "35px Montserrat";
                         ctx.fillStyle = "white";
                         ctx.fillText("88.9", 430, 75.5);
-                        x += barWidth + 80;
+                        x += barWidth + 120;
                     }
                 }
             }

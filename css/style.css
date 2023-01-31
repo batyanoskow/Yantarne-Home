@@ -789,7 +789,7 @@ body {
       grid-row-start: 1;
   -ms-grid-row-span: 2;
   grid-row-end: 3;
-  background-color: rgb(255, 0, 0);
+  background-color: #ce0000;
   border-radius: 50%;
   z-index: 5;
   position: relative;
@@ -1137,27 +1137,27 @@ body {
   }
 }
 
-@supports (padding-top: clamp( 8.125rem , 7.2361111111rem  +  4.4444444444vw , 11.25rem )) {
+@supports (padding-top: clamp( 2.5rem , 0.0111111111rem  +  12.4444444444vw , 11.25rem )) {
   .efir {
-    padding-top: clamp( 8.125rem , 7.2361111111rem  +  4.4444444444vw , 11.25rem );
+    padding-top: clamp( 2.5rem , 0.0111111111rem  +  12.4444444444vw , 11.25rem );
   }
 }
 
-@supports not (padding-top: clamp( 8.125rem , 7.2361111111rem  +  4.4444444444vw , 11.25rem )) {
+@supports not (padding-top: clamp( 2.5rem , 0.0111111111rem  +  12.4444444444vw , 11.25rem )) {
   .efir {
-    padding-top: calc(8.125rem + 3.125 * (100vw - 20rem) / 70.3125);
+    padding-top: calc(2.5rem + 8.75 * (100vw - 20rem) / 70.3125);
   }
 }
 
-@supports (padding-bottom: clamp( 8.4375rem , 7.9041666667rem  +  2.6666666667vw , 10.3125rem )) {
+@supports (padding-bottom: clamp( 5rem , 3.4888888889rem  +  7.5555555556vw , 10.3125rem )) {
   .efir {
-    padding-bottom: clamp( 8.4375rem , 7.9041666667rem  +  2.6666666667vw , 10.3125rem );
+    padding-bottom: clamp( 5rem , 3.4888888889rem  +  7.5555555556vw , 10.3125rem );
   }
 }
 
-@supports not (padding-bottom: clamp( 8.4375rem , 7.9041666667rem  +  2.6666666667vw , 10.3125rem )) {
+@supports not (padding-bottom: clamp( 5rem , 3.4888888889rem  +  7.5555555556vw , 10.3125rem )) {
   .efir {
-    padding-bottom: calc(8.4375rem + 1.875 * (100vw - 20rem) / 70.3125);
+    padding-bottom: calc(5rem + 5.3125 * (100vw - 20rem) / 70.3125);
   }
 }
 
@@ -1363,18 +1363,18 @@ body {
 }
 
 .about {
-  padding-top: 5rem;
+  padding-bottom: 4.375rem;
 }
 
-@supports (padding-bottom: clamp( 8.625rem , 7.6116666667rem  +  5.0666666667vw , 12.1875rem )) {
+@supports (padding-top: clamp( 1.25rem , 0.0944444444rem  +  5.7777777778vw , 5.3125rem )) {
   .about {
-    padding-bottom: clamp( 8.625rem , 7.6116666667rem  +  5.0666666667vw , 12.1875rem );
+    padding-top: clamp( 1.25rem , 0.0944444444rem  +  5.7777777778vw , 5.3125rem );
   }
 }
 
-@supports not (padding-bottom: clamp( 8.625rem , 7.6116666667rem  +  5.0666666667vw , 12.1875rem )) {
+@supports not (padding-top: clamp( 1.25rem , 0.0944444444rem  +  5.7777777778vw , 5.3125rem )) {
   .about {
-    padding-bottom: calc(8.625rem + 3.5625 * (100vw - 20rem) / 70.3125);
+    padding-top: calc(1.25rem + 4.0625 * (100vw - 20rem) / 70.3125);
   }
 }
 
@@ -1516,8 +1516,28 @@ body {
   background: radial-gradient(circle, rgb(222, 19, 149) 0%, rgb(255, 0, 0) 93%);
 }
 
-.team {
-  padding: 5.3125rem 0;
+@supports (padding-top: clamp( 1.25rem , 0.0944444444rem  +  5.7777777778vw , 5.3125rem )) {
+  .team {
+    padding-top: clamp( 1.25rem , 0.0944444444rem  +  5.7777777778vw , 5.3125rem );
+  }
+}
+
+@supports not (padding-top: clamp( 1.25rem , 0.0944444444rem  +  5.7777777778vw , 5.3125rem )) {
+  .team {
+    padding-top: calc(1.25rem + 4.0625 * (100vw - 20rem) / 70.3125);
+  }
+}
+
+@supports (padding-bottom: clamp( 1.25rem , 0.0944444444rem  +  5.7777777778vw , 5.3125rem )) {
+  .team {
+    padding-bottom: clamp( 1.25rem , 0.0944444444rem  +  5.7777777778vw , 5.3125rem );
+  }
+}
+
+@supports not (padding-bottom: clamp( 1.25rem , 0.0944444444rem  +  5.7777777778vw , 5.3125rem )) {
+  .team {
+    padding-bottom: calc(1.25rem + 4.0625 * (100vw - 20rem) / 70.3125);
+  }
 }
 
 .team__container {
