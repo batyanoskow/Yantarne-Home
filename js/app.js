@@ -4874,7 +4874,7 @@
             let ctx = canvas.getContext("2d");
             let WIDTH = canvas.width;
             let HEIGHT = canvas.height;
-            let barWidth = WIDTH / 256;
+            let barWidth = WIDTH / 150;
             let barHeight = HEIGHT;
             let isRendering = false;
             let x;
@@ -4893,12 +4893,12 @@
                     ctx.fillStyle = "white";
                     ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
                     x += barWidth + 3;
-                    if (75 === i) {
+                    if (57 === i) {
                         ctx.fillStyle = "rgba(0,0,0,0)";
                         ctx.fillRect(x, HEIGHT - barHeight, 10 * barWidth, barHeight);
                         ctx.font = "20px Montserrat";
                         ctx.fillStyle = "white";
-                        ctx.fillText("88.9", 425, 70.5);
+                        ctx.fillText("88.9", 430, 75.5);
                         x += barWidth + 80;
                     }
                 }
