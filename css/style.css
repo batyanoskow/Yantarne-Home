@@ -1608,7 +1608,7 @@ body {
 }
 
 .card-team {
-  min-width: 30%;
+  min-width: 32%;
   -webkit-box-shadow: 0 0 4px rgba(163, 163, 163, 0.42);
           box-shadow: 0 0 4px rgba(163, 163, 163, 0.42);
 }
@@ -1627,15 +1627,27 @@ body {
   overflow: hidden;
 }
 
-@supports (height: clamp( 25rem , 24.4666666667rem  +  2.6666666667vw , 26.875rem )) {
+@supports (width: clamp( 17.1875rem , 14.1119444444rem  +  15.3777777778vw , 28rem )) {
   .card-team__img {
-    height: clamp( 25rem , 24.4666666667rem  +  2.6666666667vw , 26.875rem );
+    width: clamp( 17.1875rem , 14.1119444444rem  +  15.3777777778vw , 28rem );
   }
 }
 
-@supports not (height: clamp( 25rem , 24.4666666667rem  +  2.6666666667vw , 26.875rem )) {
+@supports not (width: clamp( 17.1875rem , 14.1119444444rem  +  15.3777777778vw , 28rem )) {
   .card-team__img {
-    height: calc(25rem + 1.875 * (100vw - 20rem) / 70.3125);
+    width: calc(17.1875rem + 10.8125 * (100vw - 20rem) / 70.3125);
+  }
+}
+
+@supports (height: clamp( 19.5625rem , 17.3047222222rem  +  11.2888888889vw , 27.5rem )) {
+  .card-team__img {
+    height: clamp( 19.5625rem , 17.3047222222rem  +  11.2888888889vw , 27.5rem );
+  }
+}
+
+@supports not (height: clamp( 19.5625rem , 17.3047222222rem  +  11.2888888889vw , 27.5rem )) {
+  .card-team__img {
+    height: calc(19.5625rem + 7.9375 * (100vw - 20rem) / 70.3125);
   }
 }
 
@@ -1944,28 +1956,14 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
-
-@supports (width: clamp( 20rem , 5.7453163182rem  +  54.303556883vw , 27.5rem )) {
-    .card-team {
-      width: clamp( 20rem , 5.7453163182rem  +  54.303556883vw , 27.5rem );
-    }
-}
-
-@supports not (width: clamp( 20rem , 5.7453163182rem  +  54.303556883vw , 27.5rem )) {
-    .card-team {
-      width: calc(20rem + 7.5 * (100vw - 26.25rem) / 13.81125);
-    }
-}
-}
-
-@media (max-width: 640.98px) and (max-width: 26.25em) {
-  .card-team {
-    width: inherit;
-  }
 }
 
 @media (max-width: 399.98px) {
   .card-team {
+    width: 100%;
+  }
+
+  .card-team__img {
     width: 100%;
   }
 }
@@ -2220,11 +2218,6 @@ body {
   .about__sub-title {
     margin-bottom: 4.6875rem;
   }
-
-  .team__grid {
-    -ms-grid-columns: (1fr)[2];
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 47.99875em) {
@@ -2309,12 +2302,6 @@ body {
   .about__button {
     width: 100%;
     padding: 1.875rem 0;
-  }
-}
-
-@media (max-width: 640.98px) and (min-width: 40.06125em) {
-  .card-team {
-    width: inherit;
   }
 }
 
