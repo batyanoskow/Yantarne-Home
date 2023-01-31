@@ -4889,7 +4889,7 @@
                 x = 0;
                 ctx.clearRect(0, 0, WIDTH, HEIGHT);
                 for (let i = 0; i < bufferLength; i++) {
-                    barHeight = dataArray[i] / 10;
+                    barHeight = dataArray[i] / 7;
                     ctx.fillStyle = "white";
                     ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
                     x += barWidth + 3;
@@ -4898,7 +4898,7 @@
                         ctx.fillRect(x, HEIGHT - barHeight, 10 * barWidth, barHeight);
                         ctx.font = "20px Montserrat";
                         ctx.fillStyle = "white";
-                        ctx.fillText("88.9", 425, 37.5);
+                        ctx.fillText("88.9", 425, 70.5);
                         x += barWidth + 80;
                     }
                 }
