@@ -1627,21 +1627,19 @@ body {
   overflow: hidden;
 }
 
-@supports (height: clamp( 17.5rem , 14.8333333333rem  +  13.3333333333vw , 26.875rem )) {
+@supports (height: clamp( 25rem , 24.4666666667rem  +  2.6666666667vw , 26.875rem )) {
   .card-team__img {
-    height: clamp( 17.5rem , 14.8333333333rem  +  13.3333333333vw , 26.875rem );
+    height: clamp( 25rem , 24.4666666667rem  +  2.6666666667vw , 26.875rem );
   }
 }
 
-@supports not (height: clamp( 17.5rem , 14.8333333333rem  +  13.3333333333vw , 26.875rem )) {
+@supports not (height: clamp( 25rem , 24.4666666667rem  +  2.6666666667vw , 26.875rem )) {
   .card-team__img {
-    height: calc(17.5rem + 9.375 * (100vw - 20rem) / 70.3125);
+    height: calc(25rem + 1.875 * (100vw - 20rem) / 70.3125);
   }
 }
 
 .card-team__img img {
-  -o-object-fit: bottom;
-     object-fit: bottom;
   width: 100%;
   height: 100%;
 }
