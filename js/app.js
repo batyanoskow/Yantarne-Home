@@ -4711,13 +4711,13 @@
                     ctx.fillStyle = "white";
                     ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
                     x += barWidth + 3;
-                    if (57 === i) {
+                    if (54 === i) {
                         ctx.fillStyle = "rgba(0,0,0,0)";
                         ctx.fillRect(x, HEIGHT - barHeight, 10 * barWidth, barHeight);
-                        ctx.font = "35px Montserrat";
+                        ctx.font = "500 50px Montserrat";
                         ctx.fillStyle = "white";
-                        ctx.fillText("88.9", 430, 75.5);
-                        x += barWidth + 120;
+                        ctx.fillText("88.9", 410, 76);
+                        x += barWidth + 150;
                     }
                 }
             }
