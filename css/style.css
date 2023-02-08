@@ -2140,6 +2140,7 @@ body {
   .popup__content {
     min-width: 100%;
     padding: 0;
+    padding-top: 30px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -2159,21 +2160,10 @@ body {
     margin-right: 0;
   }
 
-@supports (margin-bottom: clamp( 0.625rem , -0.0861111111rem  +  3.5555555556vw , 3.125rem )) {
-    .popup__card {
-      margin-bottom: clamp( 0.625rem , -0.0861111111rem  +  3.5555555556vw , 3.125rem );
-    }
-}
-
-@supports not (margin-bottom: clamp( 0.625rem , -0.0861111111rem  +  3.5555555556vw , 3.125rem )) {
-    .popup__card {
-      margin-bottom: calc(0.625rem + 2.5 * (100vw - 20rem) / 70.3125);
-    }
-}
-
   .popup__container {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 
   .popup__title {
