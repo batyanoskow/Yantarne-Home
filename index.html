@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230202185755">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230208191000">
 	<link rel="icon" type="" href="img/favicon.png">
 	<meta name="format-detection" content="telephone=YES">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
@@ -23,13 +23,13 @@
 
 
 					<div class="header__slide swiper-slide">
-						<picture><source srcset="img/bg1.png" type="image/webp"><img src="img/bg1.png" alt=""></picture>
+						<picture><source srcset="img/bg1.webp" type="image/webp"><img src="img/bg1.png" alt=""></picture>
 					</div>
 					<div class="header__slide swiper-slide">
-						<picture><source srcset="img/bg2.png" type="image/webp"><img src="img/bg2.png" alt=""></picture>
+						<picture><source srcset="img/bg2.webp" type="image/webp"><img src="img/bg2.png" alt=""></picture>
 					</div>
 					<div class="header__slide swiper-slide">
-						<picture><source srcset="img/bg3.png" type="image/webp"><img src="img/bg3.png" alt=""></picture>
+						<picture><source srcset="img/bg3.webp" type="image/webp"><img src="img/bg3.png" alt=""></picture>
 					</div>
 				</div>
 
@@ -67,7 +67,35 @@
 		<main class="page">
 			<div class="page__efir efir" id="efir">
 				<div class="efir__container">
-				
+					<!-- <div class="efir__card card-efir">
+							<div class="card-efir__img">
+								<picture><source data-srcset="img/coffee.webp" type="image/webp"><img data-src="img/coffee.png" alt="" class="_lazy-loaded"></picture>
+							</div>
+							<h1 class="card-efir__title">Ранкове шоу <br> "НЕ СПАТИ"</h1>
+							<p class="card-efir__sub-title">Щобудня<span>09:00-13:00</span></p>
+						</div>
+						<div class="efir__card card-efir">
+							<div class="card-efir__img">
+								<picture><source data-srcset="img/micro.webp" type="image/webp"><img data-src="img/micro.png" alt="" class="_lazy-loaded"></picture>
+							</div>
+							<h1 class="card-efir__title">Денне шоу <br> "ТАЙ ТАКЕ"</h1>
+							<p class="card-efir__sub-title">Щобудня<span>14:00-18:00</span></p>
+						</div>
+					
+						<div class="efir__card card-efir">
+							<div class="card-efir__img">
+								<picture><source data-srcset="img/news.webp" type="image/webp"><img data-src="img/news.png" alt="" class="_lazy-loaded"></picture>
+							</div>
+							<h1 class="card-efir__title">Новини</h1>
+							<p class="card-efir__sub-title">Щогодини<span></span></p>
+						</div>
+						<div class="efir__card card-efir">
+							<div class="card-efir__img">
+								<picture><source data-srcset="img/person.webp" type="image/webp"><img data-src="img/person.png" alt="" class="_lazy-loaded"></picture>
+							</div>
+							<h1 class="card-efir__title">Янтерв’ю</h1>
+							<p class="card-efir__sub-title">Слідкуй за анонсами в соцмережах<span></span></p>
+						</div> -->
 					<!--Made by https://github.com/Yura09823 -->
 					<div class="container__card card-efir" id="card1">
 						<div class="container__card_coffe">
@@ -231,8 +259,8 @@
 					<div class="contacts-footer__social">
 						<a href="https://www.instagram.com/yantarne.fm" class="contacts-footer__img"><i class="fa-brands fa-instagram"></i></a>
 						<a href="https://www.facebook.com/yantarne.fm" class="contacts-footer__img"><i class="fa-brands fa-facebook"></i></a>
-						<a href="https://soundcloud.com/andriy-yantarne" class="contacts-footer__img"><i class="fa-brands fa-youtube"></i></a>
-						<a href="https://www.youtube.com/channel/UCTaO-GLI_0srISh-Ase5NZw" class="contacts-footer__img"><i class="fa-brands fa-soundcloud"></i></a>
+						<a href="https://www.youtube.com/channel/UCTaO-GLI_0srISh-Ase5NZw" class="contacts-footer__img"><i class="fa-brands fa-youtube"></i></a>
+						<a href="https://soundcloud.com/andriy-yantarne" class="contacts-footer__img"><i class="fa-brands fa-soundcloud"></i></a>
 					</div>
 				</div>
 			</div>
@@ -242,16 +270,46 @@
 	<div id="popup" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content">
-				<button data-close type="button" class="popup__close"><i class="fa-solid fa-xmark"></i></button>
-				<div class="popup__text">
-					<picture><source data-srcset="img/popup.webp" type="image/webp"><img data-src="img/popup.png" alt="" class="_lazy-loaded"></picture>
+				<div class="popup__img">
+					<picture><source data-srcset="img/popup-bg1.webp" type="image/webp"><img data-src="img/popup-bg1.png" class="_lazy-loaded popup-bg1" alt=""></picture>
 				</div>
+				<div class="popup__img">
+					<picture><source data-srcset="img/popup-bg2.webp" type="image/webp"><img data-src="img/popup-bg2.png" class="_lazy-loaded popup-bg2" alt=""></picture>
+				</div>
+				<div class="popup__img">
+					<picture><source data-srcset="img/popup-bg3.webp" type="image/webp"><img data-src="img/popup-bg3.png" class="_lazy-loaded popup-bg3" alt=""></picture>
+				</div>
+				<button data-close type="button" class="popup__close"><i class="fa-solid fa-xmark"></i></button>
+				<div class="popup__container">
+					<div class="popup__text">
+						<h1 class="popup__title">Підтрий своє улюблено радіо.</h1>
+						<p class="popup__sub-title">Команда Yantarne.fm - це люди різного віку, різних інтересів і різних вподобань. Але з одною місією - розвиват «радіо рідного міста», стати потужним інформаційним фронтом, зробити свій внесок в розвиток громади, створювати унікальний контент та знайомитися з якісною музикою. Все почалося з шаленої ідеї, яку підтримували творчі люди-ентузіасти і за дуже короткий час шляхм проб і помилок, створили радіо рідного міста - Yantarne.fm зі сваїм унікальним янтарський почерком! Ми вдосконалюємося, розвиваємося, вчимося! Щою юути максимально корисними для нашої громади! Та не співпрацюємо з жодною політичною партіією і ніким не фінансуємося.</p>
+						<div class="popup__cards">
+							<div class="popup__card card-popup">
+								<div class="card-popup__logo">
+									<picture><source srcset="img/privat.webp" type="image/webp"><img src="img/privat.png" alt=""></picture>
+								</div>
+								<p class="card-popup__number card-popup__number1">4441114456006327</p>
+							</div>
+							<div class="popup__card card-popup">
+								<div class="card-popup__logo">
+									<picture><source srcset="img/mono.webp" type="image/webp"><img src="img/mono.png" alt=""></picture>
+								</div>
+								<p class="card-popup__number card-popup__number2">4441114456006327</p>
+							</div>
+						</div>
+					</div>
+					<div class="popup-qr">
+						<img src="img/qr.svg" alt="">
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230202185755"></script>
+	<script src="js/app.min.js?_v=20230208191000"></script>
 
 </body>
 
 </html>
-<script src="https://kit.fontawesome.com/7ab67362ad.js?_v=20230202185755" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/7ab67362ad.js?_v=20230208191000" crossorigin="anonymous"></script>

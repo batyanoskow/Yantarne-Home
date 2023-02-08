@@ -4666,6 +4666,8 @@
         da.init();
         window.addEventListener("load", (function(event) {
             let buttonPlay = document.querySelector(".music-header__button");
+            let privat = document.querySelector(".card-popup__number1");
+            document.querySelector(".card-popup__number2");
             async function getData() {
                 await fetch("https://complex.in.ua/status-json.xsl?mount=/yantarne").then((res => res.json())).then((data => {
                     let songNameField = document.querySelector(".music-header__text");
@@ -4721,7 +4723,7 @@
                     }
                 }
             }
-            buttonPlay.addEventListener("click", (function(e) {
+            buttonPlay.addEventListener("click", (async function(e) {
                 buttonPlay.classList.toggle("_active");
                 let buttonPlayImg = document.querySelector(".music-header__button i");
                 if (buttonPlay.classList.contains("_active")) {
@@ -4736,6 +4738,13 @@
                     isRendering = false;
                     buttonPlayImg.removeAttribute("class");
                     buttonPlayImg.classList.add("icon-play");
+                }
+            }));
+            privat.addEventListener("click", (async function(e) {
+                try {
+                    await navigator.clipboard.writeText(123);
+                } catch (e) {
+                    console.log(e);
                 }
             }));
         }));
