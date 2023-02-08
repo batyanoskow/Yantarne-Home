@@ -2096,16 +2096,6 @@ body {
   }
 }
 
-@media (max-width: 399.98px) {
-  .card-team {
-    width: 100%;
-  }
-
-  .card-team__img {
-    width: 100%;
-  }
-}
-
 @media (max-width: 61.99875em) {
   .popup-qr {
     display: none;
@@ -2140,7 +2130,7 @@ body {
   .popup__content {
     min-width: 100%;
     padding: 0;
-    padding-top: 30px;
+    padding-top: 3 0px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
