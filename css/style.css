@@ -1036,7 +1036,7 @@ body {
   }
 }
 
-.music-header__button i {
+.music-header__button i.icon-play {
   position: relative;
   right: -3px;
 }
@@ -2434,6 +2434,17 @@ body {
   }
 
   .header__slide img {
+    width: auto !important;
+    background-size: cover;
+    height: 100%;
+  }
+
+  .header__slide picture {
+    width: auto !important;
+    height: 100%;
+  }
+
+  .header__slide picture img {
     width: auto !important;
     background-size: cover;
     height: 100%;
