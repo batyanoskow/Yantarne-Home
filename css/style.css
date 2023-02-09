@@ -1609,9 +1609,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1624,15 +1624,15 @@ body {
   line-height: 150%;
 }
 
-@supports (font-size: clamp( 1.25rem , 1.1788888889rem  +  0.3555555556vw , 1.5rem )) {
+@supports (font-size: clamp( 1.25rem , 1.1077777778rem  +  0.7111111111vw , 1.75rem )) {
   .about__sub-title {
-    font-size: clamp( 1.25rem , 1.1788888889rem  +  0.3555555556vw , 1.5rem );
+    font-size: clamp( 1.25rem , 1.1077777778rem  +  0.7111111111vw , 1.75rem );
   }
 }
 
-@supports not (font-size: clamp( 1.25rem , 1.1788888889rem  +  0.3555555556vw , 1.5rem )) {
+@supports not (font-size: clamp( 1.25rem , 1.1077777778rem  +  0.7111111111vw , 1.75rem )) {
   .about__sub-title {
-    font-size: calc(1.25rem + 0.25 * (100vw - 20rem) / 70.3125);
+    font-size: calc(1.25rem + 0.5 * (100vw - 20rem) / 70.3125);
   }
 }
 
@@ -1688,6 +1688,7 @@ body {
 }
 
 .about__button {
+  margin-top: auto;
   padding: 2.5rem 6.25rem;
   color: #ce0000;
   border: 2px solid #ce0000;
@@ -1700,9 +1701,7 @@ body {
 
 .about__button:hover {
   color: #fff;
-  background: rgb(222, 19, 149);
-  background: -o-radial-gradient(circle, rgb(222, 19, 149) 0%, rgb(255, 0, 0) 93%);
-  background: radial-gradient(circle, rgb(222, 19, 149) 0%, rgb(255, 0, 0) 93%);
+  background-color: #ce0000;
 }
 
 @supports (padding-top: clamp( 1.25rem , 0.0944444444rem  +  5.7777777778vw , 5.3125rem )) {
@@ -1790,14 +1789,14 @@ body {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   gap: 1.5625rem;
 }
 
 .card-team {
-  min-width: 28%;
+  min-width: 20%;
   -webkit-box-shadow: 0 0 4px rgba(163, 163, 163, 0.42);
           box-shadow: 0 0 4px rgba(163, 163, 163, 0.42);
 }
@@ -1814,29 +1813,32 @@ body {
           justify-content: center;
   position: relative;
   overflow: hidden;
+  font-size: 6.25rem;
+  background-color: #ce0000;
+  color: #fff;
 }
 
-@supports (width: clamp( 17.1875rem , 14.1119444444rem  +  15.3777777778vw , 28rem )) {
+@supports (width: clamp( 17.1875rem , 16.7786111111rem  +  2.0444444444vw , 18.625rem )) {
   .card-team__img {
-    width: clamp( 17.1875rem , 14.1119444444rem  +  15.3777777778vw , 28rem );
+    width: clamp( 17.1875rem , 16.7786111111rem  +  2.0444444444vw , 18.625rem );
   }
 }
 
-@supports not (width: clamp( 17.1875rem , 14.1119444444rem  +  15.3777777778vw , 28rem )) {
+@supports not (width: clamp( 17.1875rem , 16.7786111111rem  +  2.0444444444vw , 18.625rem )) {
   .card-team__img {
-    width: calc(17.1875rem + 10.8125 * (100vw - 20rem) / 70.3125);
+    width: calc(17.1875rem + 1.4375 * (100vw - 20rem) / 70.3125);
   }
 }
 
-@supports (height: clamp( 19.5625rem , 16.5936111111rem  +  14.8444444444vw , 30rem )) {
+@supports (height: clamp( 19.5625rem , 19.2602777778rem  +  1.5111111111vw , 20.625rem )) {
   .card-team__img {
-    height: clamp( 19.5625rem , 16.5936111111rem  +  14.8444444444vw , 30rem );
+    height: clamp( 19.5625rem , 19.2602777778rem  +  1.5111111111vw , 20.625rem );
   }
 }
 
-@supports not (height: clamp( 19.5625rem , 16.5936111111rem  +  14.8444444444vw , 30rem )) {
+@supports not (height: clamp( 19.5625rem , 19.2602777778rem  +  1.5111111111vw , 20.625rem )) {
   .card-team__img {
-    height: calc(19.5625rem + 10.4375 * (100vw - 20rem) / 70.3125);
+    height: calc(19.5625rem + 1.0625 * (100vw - 20rem) / 70.3125);
   }
 }
 
@@ -1910,15 +1912,15 @@ body {
   transition: all 0.5s ease 0s;
 }
 
-@supports (font-size: clamp( 0.875rem , 0.7683333333rem  +  0.5333333333vw , 1.25rem )) {
+@supports (font-size: clamp( 0.875rem , 0.8394444444rem  +  0.1777777778vw , 1rem )) {
   .card-team__img::before {
-    font-size: clamp( 0.875rem , 0.7683333333rem  +  0.5333333333vw , 1.25rem );
+    font-size: clamp( 0.875rem , 0.8394444444rem  +  0.1777777778vw , 1rem );
   }
 }
 
-@supports not (font-size: clamp( 0.875rem , 0.7683333333rem  +  0.5333333333vw , 1.25rem )) {
+@supports not (font-size: clamp( 0.875rem , 0.8394444444rem  +  0.1777777778vw , 1rem )) {
   .card-team__img::before {
-    font-size: calc(0.875rem + 0.375 * (100vw - 20rem) / 70.3125);
+    font-size: calc(0.875rem + 0.125 * (100vw - 20rem) / 70.3125);
   }
 }
 
@@ -2007,15 +2009,15 @@ body {
   padding-top: 5rem;
 }
 
-@supports (padding-bottom: clamp( 10.625rem , 8.4916666667rem  +  10.6666666667vw , 18.125rem )) {
+@supports (padding-bottom: clamp( 2.5rem , 1.4333333333rem  +  5.3333333333vw , 6.25rem )) {
   .friends {
-    padding-bottom: clamp( 10.625rem , 8.4916666667rem  +  10.6666666667vw , 18.125rem );
+    padding-bottom: clamp( 2.5rem , 1.4333333333rem  +  5.3333333333vw , 6.25rem );
   }
 }
 
-@supports not (padding-bottom: clamp( 10.625rem , 8.4916666667rem  +  10.6666666667vw , 18.125rem )) {
+@supports not (padding-bottom: clamp( 2.5rem , 1.4333333333rem  +  5.3333333333vw , 6.25rem )) {
   .friends {
-    padding-bottom: calc(10.625rem + 7.5 * (100vw - 20rem) / 70.3125);
+    padding-bottom: calc(2.5rem + 3.75 * (100vw - 20rem) / 70.3125);
   }
 }
 
@@ -2506,6 +2508,12 @@ body {
 
   .about__sub-title {
     margin-bottom: 4.6875rem;
+  }
+
+  .about__inform {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
