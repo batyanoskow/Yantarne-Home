@@ -1179,6 +1179,7 @@ body {
 }
 
 .footer__sub-title {
+  margin-top: 1.25rem;
   color: #fff;
   line-height: 1.2;
 }
