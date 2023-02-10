@@ -1799,7 +1799,7 @@ body {
 }
 
 .card-team {
-  min-width: 20%;
+  min-width: 23.661%;
   -webkit-box-shadow: 0 0 4px rgba(163, 163, 163, 0.42);
           box-shadow: 0 0 4px rgba(163, 163, 163, 0.42);
 }
@@ -1821,27 +1821,27 @@ body {
   color: #fff;
 }
 
-@supports (width: clamp( 17.1875rem , 16.7786111111rem  +  2.0444444444vw , 18.625rem )) {
+@supports (width: clamp( 17.1875rem , 16.1919444444rem  +  4.9777777778vw , 20.6875rem )) {
   .card-team__img {
-    width: clamp( 17.1875rem , 16.7786111111rem  +  2.0444444444vw , 18.625rem );
+    width: clamp( 17.1875rem , 16.1919444444rem  +  4.9777777778vw , 20.6875rem );
   }
 }
 
-@supports not (width: clamp( 17.1875rem , 16.7786111111rem  +  2.0444444444vw , 18.625rem )) {
+@supports not (width: clamp( 17.1875rem , 16.1919444444rem  +  4.9777777778vw , 20.6875rem )) {
   .card-team__img {
-    width: calc(17.1875rem + 1.4375 * (100vw - 20rem) / 70.3125);
+    width: calc(17.1875rem + 3.5 * (100vw - 20rem) / 70.3125);
   }
 }
 
-@supports (height: clamp( 19.5625rem , 19.2602777778rem  +  1.5111111111vw , 20.625rem )) {
+@supports (height: clamp( 19.5625rem , 18.7269444444rem  +  4.1777777778vw , 22.5rem )) {
   .card-team__img {
-    height: clamp( 19.5625rem , 19.2602777778rem  +  1.5111111111vw , 20.625rem );
+    height: clamp( 19.5625rem , 18.7269444444rem  +  4.1777777778vw , 22.5rem );
   }
 }
 
-@supports not (height: clamp( 19.5625rem , 19.2602777778rem  +  1.5111111111vw , 20.625rem )) {
+@supports not (height: clamp( 19.5625rem , 18.7269444444rem  +  4.1777777778vw , 22.5rem )) {
   .card-team__img {
-    height: calc(19.5625rem + 1.0625 * (100vw - 20rem) / 70.3125);
+    height: calc(19.5625rem + 2.9375 * (100vw - 20rem) / 70.3125);
   }
 }
 
