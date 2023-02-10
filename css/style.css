@@ -857,9 +857,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -967,13 +967,14 @@ body {
 .music-header {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 0.3fr 1fr;
-  grid-template-columns: 0.3fr 1fr;
+  -ms-grid-columns: 0.4fr 1fr;
+  grid-template-columns: 0.4fr 1fr;
   -ms-grid-rows: 0.2fr 1fr;
   grid-template-rows: 0.2fr 1fr;
 }
 
 .music-header__button {
+  margin: 0 auto;
   margin-left: 50px;
   -ms-grid-row: 1;
       grid-row-start: 1;
@@ -1661,6 +1662,7 @@ body {
 
 .about__img {
   margin-bottom: 5.625rem;
+  padding-top: 12.5px;
 }
 
 @supports (width: clamp( 20.5rem , 16.3755555556rem  +  20.6222222222vw , 35rem )) {
