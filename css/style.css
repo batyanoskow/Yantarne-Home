@@ -1626,15 +1626,15 @@ body {
   line-height: 150%;
 }
 
-@supports (font-size: clamp( 1.25rem , 1.1077777778rem  +  0.7111111111vw , 1.75rem )) {
+@supports (font-size: clamp( 1.25rem , 1.1788888889rem  +  0.3555555556vw , 1.5rem )) {
   .about__sub-title {
-    font-size: clamp( 1.25rem , 1.1077777778rem  +  0.7111111111vw , 1.75rem );
+    font-size: clamp( 1.25rem , 1.1788888889rem  +  0.3555555556vw , 1.5rem );
   }
 }
 
-@supports not (font-size: clamp( 1.25rem , 1.1077777778rem  +  0.7111111111vw , 1.75rem )) {
+@supports not (font-size: clamp( 1.25rem , 1.1788888889rem  +  0.3555555556vw , 1.5rem )) {
   .about__sub-title {
-    font-size: calc(1.25rem + 0.5 * (100vw - 20rem) / 70.3125);
+    font-size: calc(1.25rem + 0.25 * (100vw - 20rem) / 70.3125);
   }
 }
 
@@ -1662,7 +1662,7 @@ body {
 }
 
 .about__img {
-  margin-bottom: 5.625rem;
+  margin-bottom: 3.125rem;
   padding-top: 12.5px;
 }
 
